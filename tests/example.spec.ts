@@ -22,7 +22,7 @@ test('get started link', async ({ page }) => {
  * 1. Open the page
  * 2. Click at Get started
  * 3. Mouse hover the language dropdown
- * 4. Click at  Java
+ * 4. Click at Java
  * 5. Check the URL 
  * 6. Check the text "Installing Playwright" is not being displayed
  * 7. Check the text below is displayed
