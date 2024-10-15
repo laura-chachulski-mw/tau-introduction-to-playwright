@@ -103,5 +103,33 @@ test.describe.skip('Test Case', () => {
     });
  */
 
-  });
+
+// Login Test Example
+
+/*const { test, expect } = require('@playwright/test');
+
+test('User can log in successfully', async ({ page }) => {
+  // Arrange: Set up the initial state
+  const loginUrl = 'https://example.com/login';
+  const dashboardUrl = 'https://example.com/dashboard';
+  const username = 'testuser';
+  const password = 'password123';
+  
+  // Navigate to the login page
+  await page.goto(loginUrl);
+
+  // Act: Perform the action that's being tested
+  await page.fill('input[name="username"]', username);
+  await page.fill('input[name="password"]', password);
+  await page.click('button[type="submit"]');
+
+  // Assert: Verify the expected outcome
+  await page.waitForNavigation();
+  expect(await page.url()).toBe(dashboardUrl);
+
+  // Additional assertions (optional)
+  await expect(page.locator('h1')).toHaveText('Welcome to your dashboard, testuser!');
+});*/
+
+});
   
