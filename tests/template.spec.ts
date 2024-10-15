@@ -17,6 +17,34 @@ test.beforeAll(async ({ playwright }) => {
     // create a db connection
     // reuse a sign in state
 });
+
+
+// Example
+/*
+test.beforeAll(async ({ playwright }) => {
+    test.skip(
+      !!process.env.PROD,
+      'Test intentionally skipped in production due to data dependency.'
+    );
+
+    // Example: Start a server
+    server = await startServer();
+
+    // Example: Create a db connection
+    dbConnection = await createDbConnection();
+
+    // Example: Reuse a sign in state
+    const context = await playwright.request.newContext();
+    await context.post('/login', {
+        data: {
+            username: 'testuser',
+            password: 'password123'
+        }
+    });
+    const storageState = await context.storageState();
+    browserContext = await playwright.chromium.launchPersistentContext('', { storageState });
+});
+*/
   
 test.beforeEach(async ({ page }, testInfo) => {
     console.log(`Running ${testInfo.title}`);
