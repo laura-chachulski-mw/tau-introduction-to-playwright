@@ -19,7 +19,7 @@ test.beforeAll(async ({ playwright }) => {
 });
 
 
-// Example
+// Example beforeAll
 /*
 test.beforeAll(async ({ playwright }) => {
     test.skip(
@@ -54,6 +54,33 @@ test.beforeEach(async ({ page }, testInfo) => {
     // dismiss a modal
     // load params
 });
+
+// Example beforeEach
+
+/*const { test } = require('@playwright/test');
+
+test.beforeEach(async ({ page }, testInfo) => {
+  console.log(`Running ${testInfo.title}`);
+
+  // Open a URL
+  await page.goto('https://example.com');
+
+  // Clean up the DB
+  await page.evaluate(() => {
+    return fetch('https://example.com/api/cleanup', { method: 'POST' });
+  });
+
+  // Create a page object
+  const loginPage = new LoginPage(page);
+
+  // Dismiss a modal
+  if (await page.isVisible('div.modal')) {
+    await page.click('button.close-modal');
+  }
+
+  // Load params
+  const testParams = await loadTestParams();
+});*/
 
 test.afterAll(async ({ page }, testInfo) => {
     console.log('Test file completed.');
